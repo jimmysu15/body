@@ -68,7 +68,7 @@
         font-family:'microsoft jhenghei', sans-serif;
         font-weight:normal;
       }
-      .start{
+      .start, .end{
         width:250px;height:250px;
         border-radius:100%;
         line-height:240px;
@@ -102,6 +102,7 @@
       }
       .done{background:#252830;border:0;display:none;}
       .done .glyphicon-star{display:block !important;}
+      .endpage .title{color:#1997C6;}
     </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -132,6 +133,9 @@
       <button class="progress-button" data-style="fill" data-vertical>開始</button>
     </div>
     <div class="section">
+      <h2 class="title">腰</h2>
+    </div>
+    <div class="section">
       <h2 class="title">臀</h2>
     </div>
     <div class="section">
@@ -157,6 +161,10 @@
         </div>      
       </div>
     </div>
+    <div class="section endpage">
+      <h2 class="title">今日任務已完成</h2>
+      <a href="#" class="btn btn-default end"><span class="glyphicon glyphicon-ok"></span></a>
+    </div>
 </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -177,14 +185,14 @@
           callback : function( instance ) {
             var progress = 0,
               interval = setInterval( function() {
-                progress = Math.min( progress + Math.random() * 0.1, 10 );
+                progress = Math.min( progress + Math.random() * 0.1, 1 );
                 instance._setProgress( progress );
 
                 if( progress === 1 ) {
                   instance._stop(1);
                   clearInterval( interval );
                 }
-              }, 1200 );
+              }, 3000 );
           }
         } );
       } );
@@ -193,7 +201,7 @@
       });
       $('.progress-button').click(function(){
         $(this).parent().find('.glyphicon-star').eq(0).delay(60000).fadeIn().clone().appendTo('.star');
-        $('.body').delay(100).queue(function() { navigator.vibrate(1000).dequeue(); });
+        navigator.vibrate(1000)
       });
       $('.legbtn').click(function(){
         $(this).parent().fadeOut(5000);
