@@ -262,14 +262,6 @@
       } else if(element.msRequestFullscreen) {
         element.msRequestFullscreen();
       }
-      $('#fullpage').fullpage({
-                afterLoad: function(anchorLink, index){
-                    var loadedSection = $(this);
-                    if(index == 7){
-                        ga('send', 'event', 'step', 'click', 'ok');
-                    }
-                }                   
-      });      
     }
 
     $(function() {
