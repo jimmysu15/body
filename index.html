@@ -154,12 +154,11 @@
       .legbtn{            
         background: none;
         width: 100%;
-        height: 50px;
-        border-top: 1px solid rgba(255,255,255,.2);
+        height: 75px;
         letter-spacing: 2px;
-        border-bottom: 1px solid rgba(255,255,255,.5);
-        margin-bottom: 5px;
-      }
+        border-top: 1px dotted rgba(255,255,255,.5);
+        border-bottom: 1px dotted rgba(255,255,255,.5);
+      }      
 
       .endpage{}
       .end{color:#1BC98E;border: 1px solid #FFF;box-shadow: 0 0 10px #FFF, 0 0 10px #FFF inset;}
@@ -359,10 +358,10 @@
         launchFullscreen(document.documentElement);
       });
       $('.progress-button').click(function(){
+        $(this).parent().find('.glyphicon-star').eq(0).delay(65000).fadeIn().clone().appendTo('.star');
         setTimeout( function(){ 
-          $(this).parent().find('.glyphicon-star').eq(0).fadeIn().clone().appendTo('.star');
           navigator.vibrate(100);
-        }  , 60000 );
+        }  , 70000 );
       });
       $('.legbtn').click(function(){
         $(this).fadeOut(5000);
