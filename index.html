@@ -91,6 +91,7 @@
 
       .orhint{display:none;}
       .fp-tableCell{position:relative;}
+      .fp-section{height:100vh !important;}
       .title{
         position:absolute;
         width:100%;
@@ -112,7 +113,7 @@
       }
 
       .intro{background:rgba(0,0,0,.8);}
-      .start{color:#1997C6;border:5px double #1997C6;}
+      .start, .start:focus, .start:hover{color:#1997C6;border:5px double #1997C6;}
      
       .progress-button {width: 100%; height: 100%;background: rgba(0,0,0,.5);}
       .progress-button[disabled], .progress-button[disabled].state-loading {font-size:0;}
@@ -120,7 +121,7 @@
       .progress-button .content::before, .progress-button .content::after  {color: #0e7138; }
       .progress-button .content {border: 1px solid #FFF;max-width: 300px;margin: 0 auto;border-radius:5px;}
       .progress-button .progress {}
-      .progress-button .progress-inner {background: rgba(0,0,0,.8);opacity:.2;}
+      .progress-button .progress-inner {background: rgba(0,0,0,.8);opacity:.4;}
       
       .center1{background:rgba(0,0,0,.4);}
       .center2{background:rgba(0,0,0,.1);}
@@ -360,8 +361,8 @@
       $('.progress-button').click(function(){
         setTimeout( function(){ 
           $(this).parent().find('.glyphicon-star').eq(0).fadeIn().clone().appendTo('.star');
-          navigator.vibrate(1000);
-        }  , 1000 );
+          navigator.vibrate(100);
+        }  , 60000 );
       });
       $('.legbtn').click(function(){
         $(this).fadeOut(5000);
